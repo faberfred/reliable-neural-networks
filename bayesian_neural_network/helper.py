@@ -95,3 +95,11 @@ def view_classify(img, ps, version="MNIST"):
     ax2.set_xlim(0, 1.1)
 
     plt.tight_layout()
+    
+def small_imshow(img):
+    img = img / 2 + 0.5     # unnormalize
+    npimg = img.numpy()
+    
+    fig, ax = plt.subplots(figsize=(1, 1))
+    ax.imshow(npimg,  cmap='gray', interpolation='nearest')
+    plt.show()
